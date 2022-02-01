@@ -1,9 +1,15 @@
  import React from 'react';
- 
- export default function Dashboard() {
-   return (<div>
-       {id}
+ import Sidebar from './Sidebar';
 
-   </div>);
+ export default function Dashboard({id}) {
+   const { selectedConversation } = useConversations()
+
+   return (
+   <div className="d-flex" style={{height: '100vh'}}>
+     <Sidebar id= {id}/>
+     {selectedConversation && <OpenConversation/>}
+
+   </div>
+   );
  }
  
